@@ -1,71 +1,150 @@
-# Getting Started with Create React App
+## Descripción
+MovieFinder MVP es una aplicación web moderna diseñada para ayudar a los usuarios a descubrir películas mediante un sistema avanzado de búsqueda y filtrado. El proyecto implementa las mejores prácticas de desarrollo React, optimización de rendimiento y diseño de interfaces intuitivas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivo del Proyecto
+Crear un Producto Mínimo Viable (MVP) funcional que permita a los usuarios:
 
-## Available Scripts
+- Buscar películas por diferentes criterios
+- Aplicar múltiples filtros simultáneamente
+- Visualizar información detallada de cada película
+- Disfrutar de una experiencia de usuario fluida y responsive
 
-In the project directory, you can run:
+## Instalacion
+### 1. Clonar el repositorio
+- git clone https://github.com/tu-usuario/movie-finder-mvp.git
 
-### `npm start`
+### 2. Entrar al directorio
+- cd movie-finder-mvp
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. Instalar dependencias
+- npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. Iniciar la aplicación
+- npm start
 
-### `npm test`
+## Características
+## Funcionalidades Principales
+| Funcionalidad | Descripción | Estado |
+| :--- | :--- | :--- |
+| Búsqueda Dinámica | Búsqueda en tiempo real por título, actor o director | Implementado |
+| Filtro por Género | Selección de géneros específicos (Drama, Acción, etc.) | Implementado |
+| Filtro por Director | Búsqueda de películas por director | Implementado |
+| Filtro por Actor | Filtrado por actores específicos | Implementado |
+| Filtro por Año | Selección de películas por año de lanzamiento | Implementado |
+| Filtro por Premios | Mostrar solo películas premiadas | Implementado |
+| Filtros Combinados | Aplicación simultánea de múltiples filtros | Implementado |
+| Diseño Responsive | Adaptable a móvil, tablet y desktop | Implementado |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requisitos Previos
+Antes de comenzar, asegúrate de tener instalado:
 
-### `npm run build`
+bash
+- node --version  # v14.0.0 o superior
+- npm --version   # v6.0.0 o superior
+- git --version   # v2.0.0 o superior
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación de Requisitos
+### Windows:
+- Descargar Node.js desde: https://nodejs.org/
+- Git desde: https://git-scm.com/download/win
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### macOS:
+- bashbrew install node
+- brew install git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Linux (Ubuntu/Debian):
+- sudo apt update
+- sudo apt install nodejs npm git
 
-### `npm run eject`
+## Estructura del proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+movie-finder-mvp/
+│
+├── public/                          # Archivos públicos
+│   ├── index.html                   # HTML principal
+│   └── favicon.ico                  # Icono de la app
+│
+├── src/                             # Código fuente
+│   │
+│   ├── data/                        # Capa de datos
+│   │   └── movies.js               # Base de datos de películas
+│   │
+│   ├── components/                  # Componentes React
+│   │   ├── SearchBar.js            # Barra de búsqueda
+│   │   ├── Filters.js              # Panel de filtros
+│   │   └── MovieCard.js            # Tarjeta de película
+│   │
+│   ├── styles/                      # Estilos CSS
+│   │   ├── App.css                 # Estilos principales
+│   │   └── MovieCard.css           # Estilos de tarjetas
+│   │
+│   ├── App.js                       # Componente raíz
+│   ├── index.js                     # Punto de entrada
+│   └── index.css                    # Estilos globales
+│
+├── .gitignore                       # Archivos ignorados por Git
+├── package.json                     # Dependencias del proyecto
+├── README.md                        # Este archivo
+└── SETUP.md                         # Guía de instalación detallada
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Componentes
+App.js (Principal)
+### Responsabilidades:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Gestión del estado global
+- Lógica de filtrado y búsqueda
+- Orquestación de componentes hijos
+- Renderizado del layout principal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Estados gestionados:
 
-## Learn More
+- searchQuery - Término de búsqueda
+- selectedGenre - Género seleccionado
+- selectedDirector - Director seleccionado
+- selectedActor - Actor seleccionado
+- selectedYear - Año seleccionado
+- hasAwards - Filtro de premios
+- showFilters - Visibilidad del panel de filtros
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### SearchBar.js
+#### Props:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- searchQuery - Valor actual de búsqueda
+- onSearchChange - Callback para cambios
 
-### Code Splitting
+#### Funcionalidad:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Búsqueda en tiempo real
+- Placeholder descriptivo
+- Estilos con feedback visual
 
-### Analyzing the Bundle Size
+### Filters.js
+#### Props:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- genres, directors, actors, years - Opciones disponibles
+- selected* - Valores seleccionados actuales
+- on*Change - Callbacks para cada filtro
+- onClearFilters - Limpiar todos los filtros
+- showFilters - Estado de visibilidad
+- onToggleFilters - Toggle del panel
 
-### Making a Progressive Web App
+#### Funcionalidad:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Panel colapsable de filtros
+- Contador de filtros activos
+- Dropdowns para cada criterio
+- Checkbox para premios
+- Botón de limpiar filtros
 
-### Advanced Configuration
+### MovieCard.js
+#### Props:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- movie - Objeto con información de la película
 
-### Deployment
+#### Funcionalidad:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# movie-finder-mvp
+- Visualización de poster
+- Información organizada
+- Badges de géneros
+- Hover effects
+- Diseño responsive
