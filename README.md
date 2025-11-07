@@ -56,37 +56,6 @@ bash
 - sudo apt update
 - sudo apt install nodejs npm git
 
-## Estructura del proyecto
-
-movie-finder-mvp/
-│
-├── public/                          # Archivos públicos
-│   ├── index.html                   # HTML principal
-│   └── favicon.ico                  # Icono de la app
-│
-├── src/                             # Código fuente
-│   │
-│   ├── data/                        # Capa de datos
-│   │   └── movies.js               # Base de datos de películas
-│   │
-│   ├── components/                  # Componentes React
-│   │   ├── SearchBar.js            # Barra de búsqueda
-│   │   ├── Filters.js              # Panel de filtros
-│   │   └── MovieCard.js            # Tarjeta de película
-│   │
-│   ├── styles/                      # Estilos CSS
-│   │   ├── App.css                 # Estilos principales
-│   │   └── MovieCard.css           # Estilos de tarjetas
-│   │
-│   ├── App.js                       # Componente raíz
-│   ├── index.js                     # Punto de entrada
-│   └── index.css                    # Estilos globales
-│
-├── .gitignore                       # Archivos ignorados por Git
-├── package.json                     # Dependencias del proyecto
-├── README.md                        # Este archivo
-└── SETUP.md                         # Guía de instalación detallada
-
 ## Componentes
 App.js (Principal)
 ### Responsabilidades:
